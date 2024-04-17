@@ -1,26 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MusicPlayer : MonoBehaviour
+public class Exit : MonoBehaviour
 {
+    // Start is called before the first frame update
     private bool isPlayerInside = false;
     private bool wasEpressed = false;
     public GameObject eKey;
-    private Animator anim;
-    private AudioSource audio;
     private void Start() {
-        anim = GetComponent<Animator>();
         eKey.SetActive(false);
-        audio = GetComponent<AudioSource>();
-        audio.enabled = false;
     }
 
     private void Update() {//player pressed E
         if(Input.GetKey(KeyCode.E) && isPlayerInside && !wasEpressed){
             eKey.SetActive(false);
-            anim.SetBool("isActive", !anim.GetBool("isActive"));
-            audio.enabled = anim.GetBool("isActive");
+            SceneManager.LoadScene(2);
+            return;
         }
         if(Input.GetKey(KeyCode.E)){
             wasEpressed = true;
