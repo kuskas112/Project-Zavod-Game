@@ -16,7 +16,7 @@ public class Exit : MonoBehaviour
     private void Update() {//player pressed E
         if(Input.GetKey(KeyCode.E) && isPlayerInside && !wasEpressed){
             eKey.SetActive(false);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
             return;
         }
         if(Input.GetKey(KeyCode.E)){

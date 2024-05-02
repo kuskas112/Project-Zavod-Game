@@ -26,22 +26,33 @@ public class selectionGamePlayer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         ChooseBagForSelection[] levels = Resources.LoadAll<ChooseBagForSelection>("");
-        bagSprites = new Sprite[levels[0].bagSprites.Length];
-        for (int i = 0; i < levels[0].bagSprites.Length; i++)
+        bagSprites = new Sprite[levels[LevelManager.currentLevel].bagSprites.Length];
+        for (int i = 0; i < levels[LevelManager.currentLevel].bagSprites.Length; i++)
         {
-            bagSprites[i] = levels[0].bagSprites[i];
+            bagSprites[i] = levels[LevelManager.currentLevel].bagSprites[i];
         }
-        currLvl = levels[0];
+        currLvl = levels[LevelManager.currentLevel];
         changeBag();
     }
 
     void Update()
     {
+        if(Timer.timeStopped){return;}
         if(Input.GetKey(KeyCode.A) && canChange){
             
             neededSprite = ggLeft;
             neededAnim = animLeftTruck;
-            score += currLvl.conditionsLeft[currBagIndex];
+
+            int gainScore = currLvl.conditionsLeft[currBagIndex];
+            DigitManager.SetDigits(gainScore);
+            if(gainScore > 0){
+                neededAnim.SetBool("SuccessThrow", true);
+            }
+            else{
+                neededAnim.SetBool("SuccessThrow", false);
+            }
+
+            score += gainScore;
             StartCoroutine(waiter());
             scoreText.text = score.ToString();
             return;
@@ -50,7 +61,16 @@ public class selectionGamePlayer : MonoBehaviour
             
             neededSprite = ggRight;
             neededAnim = animRightTruck;
-            score += currLvl.conditionsRight[currBagIndex];
+            int gainScore = currLvl.conditionsRight[currBagIndex];
+            DigitManager.SetDigits(gainScore);
+            if(gainScore > 0){
+                neededAnim.SetBool("SuccessThrow", true);
+            }
+            else{
+                neededAnim.SetBool("SuccessThrow", false);
+            }
+
+            score += gainScore;
             StartCoroutine(waiter());
             scoreText.text = score.ToString();
             return;

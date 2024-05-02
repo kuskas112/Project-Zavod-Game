@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82a5a4d9b825d54db320c2f164e5751, type: 3}
   m_Name: level1
   m_EditorClassIdentifier: 
-  bagSprites: []
-  conditionsLeft: 
-  conditionsRight: 
+  bagSprites:
+  - {fileID: 21300000, guid: 03ff346414949e842a0bb87f6138029e, type: 3}
+  - {fileID: 21300000, guid: 97452756ac4a7f64c8fefbcf54db9870, type: 3}
+  - {fileID: 21300000, guid: 3967ba98339ba6c4bb7266fab0d46f20, type: 3}
+  - {fileID: 21300000, guid: 0dff76529f1aaec459f37c4895a9cfeb, type: 3}
+  - {fileID: 21300000, guid: 190b9bf9c52898e439bd8b2135785070, type: 3}
+  - {fileID: 21300000, guid: 670cf83ba89176c4aa1cfac617fd3fae, type: 3}
+  - {fileID: 21300000, guid: 4dcbb6e6406ffd641b2d10d724cb0ad4, type: 3}
+  - {fileID: 21300000, guid: b873de785aa7b654e84783df861b8e7c, type: 3}
+  - {fileID: 21300000, guid: eacba62be41fbb847ac06f3a47c9d72f, type: 3}
+  - {fileID: 21300000, guid: cc1739b4e5c37784daa9d5d7dce66ff7, type: 3}
+  - {fileID: 21300000, guid: 1ab98ec32955f184684431074b92cac7, type: 3}
+  - {fileID: 21300000, guid: b6ebfcf972fd85944a71eb350adcfb88, type: 3}
+  - {fileID: 21300000, guid: 7034948080b004d4286bec71d1006296, type: 3}
+  - {fileID: 21300000, guid: b81831c6e46f36847a3b68726c91f19e, type: 3}
+  - {fileID: 21300000, guid: ab08754e823a7fd4e9e84d3d055b6702, type: 3}
+  conditionsLeft: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000f6fffffff6fffffff6fffffff6fffffff6ffffff
+  conditionsRight: f6fffffff6fffffff6fffffff6fffffff6fffffff6fffffff6fffffff6fffffff6fffffff6ffffff0a0000000a0000000a0000000a0000000a000000

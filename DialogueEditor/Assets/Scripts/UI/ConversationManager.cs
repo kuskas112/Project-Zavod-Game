@@ -81,6 +81,7 @@ namespace DialogueEditor
         private List<UIConversationButton> m_uiOptions;
         private int m_currentSelectedIndex;
 
+        private bool skipable = false;
 
         //--------------------------------------
         // Awake, Start, Destroy, Update
@@ -109,28 +110,33 @@ namespace DialogueEditor
 
         private void Update()
         {
+            if(Input.GetKey(KeyCode.Space) && !skipable){
+                m_scrollIndex = 1000000;
+            }
+            if(Input.GetKey(KeyCode.Space)){
+                skipable = true;
+            }
+            else{
+                skipable = false;
+            }
+            
             switch (m_state)
             {
                 case eState.TransitioningDialogueBoxOn:
                     TransitioningDialogueBoxOn_Update();
                     break;
-
                 case eState.ScrollingText:
                     ScrollingText_Update();
                     break;
-
                 case eState.TransitioningOptionsOn:
                     TransitionOptionsOn_Update();
                     break;
-
                 case eState.Idle:
                     Idle_Update();
                     break;
-
                 case eState.TransitioningOptionsOff:
                     TransitionOptionsOff_Update();
                     break;
-
                 case eState.TransitioningDialogueOff:
                     TransitioningDialogueBoxOff_Update();
                     break;
