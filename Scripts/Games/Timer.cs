@@ -12,10 +12,13 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timeCount.text = startTime.ToString();
+        timeStopped = false;
+        gameOver = false;
     }
 
     void Update()
     {
+        if(gameOver){return;}
         if (!timeStopped){
             startTime-= Time.deltaTime;
             timeCount.text = Mathf.Round(startTime).ToString();
@@ -23,6 +26,7 @@ public class Timer : MonoBehaviour
         if (startTime <= 0){
             timeStopped = true;
             gameOver = true;
+            PlayerPrefs.SetInt("CurrentLevel", LevelManager.currentLevel+1);
         }
     }
 }

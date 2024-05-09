@@ -9,6 +9,7 @@ public class Exit : MonoBehaviour
     private bool isPlayerInside = false;
     private bool wasEpressed = false;
     public GameObject eKey;
+    public string sceneToExit;
     private void Start() {
         eKey.SetActive(false);
     }
@@ -16,7 +17,7 @@ public class Exit : MonoBehaviour
     private void Update() {//player pressed E
         if(Input.GetKey(KeyCode.E) && isPlayerInside && !wasEpressed){
             eKey.SetActive(false);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(sceneToExit);
             return;
         }
         if(Input.GetKey(KeyCode.E)){

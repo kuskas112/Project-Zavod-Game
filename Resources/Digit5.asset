@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77abffbeb99ce0447abbc4beb3c6181d, type: 3}
   m_Name: Digit5
   m_EditorClassIdentifier: 
-  nominal: 2
+  nominal: 5
   sprites:
-  - {fileID: 21300000, guid: c22ffd52ebec3de47bc3c66d76d906d0, type: 3}
+  - {fileID: 21300000, guid: 956310d1232c349449d0314e591fcd15, type: 3}

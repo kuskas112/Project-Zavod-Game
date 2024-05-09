@@ -22,8 +22,8 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    public void HomeScene(){
-        SceneManager.LoadScene(1);
+    public void ZavodScene(){
+        SceneManager.LoadScene("zavod");
     }
 
 }

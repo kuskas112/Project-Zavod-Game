@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
         else{
             currentLevel = 0;
         }
+        Debug.Log("Current level: " + currentLevel);
     }
 
     

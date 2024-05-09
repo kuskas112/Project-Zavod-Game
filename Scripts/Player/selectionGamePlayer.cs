@@ -23,6 +23,10 @@ public class selectionGamePlayer : MonoBehaviour
     private int score = 0;
     void Start()
     {
+        LevelManager.currentLevel = 0;
+        PlayerPrefs.SetInt("CurrentLevel", 0);
+        //only first lvl for now
+
         sr = GetComponent<SpriteRenderer>();
 
         ChooseBagForSelection[] levels = Resources.LoadAll<ChooseBagForSelection>("");
@@ -79,7 +83,7 @@ public class selectionGamePlayer : MonoBehaviour
 
     IEnumerator waiter()
     {
-        neededAnim.SetBool("bagDropped", true);
+        neededAnim.Play("BagDrop");
         bags[0].enabled = false;
         canChange = false;
         sr.sprite = neededSprite;
@@ -87,7 +91,6 @@ public class selectionGamePlayer : MonoBehaviour
         sr.sprite = ggForward;
         canChange = true;
         bags[0].enabled = true;
-        neededAnim.SetBool("bagDropped", false);
         changeBag();
     }
 
